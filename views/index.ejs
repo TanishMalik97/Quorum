@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>POSTS</title>
+</head>
+<body>
+    <h1 id="heading">Quorum</h1>
+    <a href="http://localhost:3000/posts/new " id="new">ADD NEW POST ?</a>
+    <br>
+    <% for(let i of posts ) {%>
+        <div id="details">
+        <h3>@username : <%= i.username %></h3>
+        <h4>content   : <%= i.content %></h4>
+         <div id="buts">
+            <a href="http://localhost:3000/posts/<%= i.id %> " class="ifo"> SEE DETAILS</a> 
+         <a href="http://localhost:3000/posts/<%= i.id %>/edit" class="ifo">EDIT</a>
+         </div>
+         <form method="post" action="/posts/<%= i.id %>?_method=DELETE"> 
+            <button id="del">DELETE</button>
+         </form>
+        <br>
+    </div>
+    <br><br>
+    <% } %>
+    <br>
+</body>
+</html>
